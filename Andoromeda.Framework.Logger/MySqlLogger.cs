@@ -7,15 +7,15 @@ namespace Andoromeda.Framework.Logger
 {
     public class MySqlLogger : BaseLogger, IDisposable
     {
-        private readonly string _dbUser = "kyubey2%log-rw";
-        private readonly string _dbPassword = "bce01ca5-7572-4962-811d-d4fdfe4b785b";
+        private readonly string _dbUser = "kyubey_logs_user@andoromeda";
+        private readonly string _dbPassword = "cr5aOY6VDcUMddG8v5DIQ05fUjGciO4NpMS166hVnHdLvkv0IIDVIgquErGLS3O6";
         private readonly string _dbConnectionString;
         private readonly LogSemaphore _semaphore = new LogSemaphore();
         private MySqlConnection _conn;
 
         public MySqlLogger(string catalog) : base(catalog)
         {
-            _dbConnectionString = $"Server=kyubey2.mysqldb.chinacloudapi.cn;Port=3306;Database=logs;Uid={_dbUser};Pwd={_dbPassword};";
+            _dbConnectionString = $"Server=mysql.kyubey.net;Port=3306;Database=logs;Uid={_dbUser};Pwd={_dbPassword};";
             Connect();
         }
 
